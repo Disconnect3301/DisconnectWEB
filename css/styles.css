@@ -1,3 +1,10 @@
+:root {
+    --white: #fff;
+    --gray: #c0c0c0;
+    --black: #000000;
+    --transparent: transparent;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +14,6 @@
 }
 
 html, body { 
-  width: 100%;
-  height: 100%; 
   background: #00000075;
 }
 
@@ -21,42 +26,107 @@ html, body {
     z-index: -1;
     background: radial-gradient(ellipse  at 30%  100%, transparent 0%, rgb(90,74,136) 75%, rgb(104,73,142) 100%) 35% 35%/140% 170%,
               linear-gradient(220deg, rgb(106,118,190) 0%, rgb(158,86,167) 60%, rgb(82,94,170) 100%);
-
 }
 
 .main-container {
     display: flex;
-    align-items: center;
     align-content: center;
     width: 100%;
     height: 100vh;
 }
+
+
+@media screen and (max-width: 1000px) {
+    .main-container {
+        flex-wrap: wrap;
+        align-content: flex-start;
+        height: auto;
+    }
+
+    .profile-card {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .avatar {
+        width: 50%;
+        height: 50%;
+    }
+
+    img {
+        width: 15%;
+        height: 15%;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+}
+
+/* @media screen and (min-width: 601px) and (max-width: 768px) {
+    html, body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html, body {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    html, body {
+        font-size: 18px;
+    }
+} */
 
 .profile-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
-    justify-content: stretch;
-    padding: 5vh;
-    margin: 0 2% 0 2%;
-    gap: 2vh;
-    border: 0.1vh solid rgba(118, 24, 206, 0.726);
+    border-top: 0.3vh solid rgba(118, 24, 206, 0.8);
+    border-bottom: 0.1vh solid rgba(118, 24, 206, 0.6);
+    border-left: 0.3vh solid rgba(118, 24, 206, 0.8);
+    border-right: 0.1vh solid rgba(118, 24, 206, 0.6);
     border-radius: 3.5vh ;
     background-color: black;
     box-shadow: 0 0 3vh rgb(0, 0, 0);
     color: rgb(255, 255, 255);
+
+    margin: 3%;
+    padding: 7% 3% 7% 3%;
+}
+
+.projects-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border-top: 0.3vh solid rgba(118, 24, 206, 0.8);
+    border-bottom: 0.1vh solid rgba(118, 24, 206, 0.6);
+    border-left: 0.3vh solid rgba(118, 24, 206, 0.8);
+    border-right: 0.1vh solid rgba(118, 24, 206, 0.6);
+    border-radius: 3.5vh ;
+    background-color: black;
+    box-shadow: 0 0 3vh rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    margin: 3%;
+    padding: 7% 3% 7% 3%;
 }
 
 .projects-container{
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    background-color: blueviolet;
-    align-items: stretch;
-    gap: 20px;
-    width: 60%;
-    height: 800px;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
 }
 
 .avatar {
@@ -65,13 +135,39 @@ html, body {
     box-shadow: 0px 0px 50px rgb(119, 0, 255);
 }
 
-.about-me {
-    text-align: center;
-    margin: 10px;
-}
-
 .test{
     width: 200px;
     height: 200px;
     background-color: red;
+}
+
+.boxes {
+    text-align: center;
+    border-radius: 30px;
+    border-color: rgba(255, 255, 255, 0);
+    background: linear-gradient(180deg, rgba(47, 48, 48, 0) 0%, rgba(60, 0, 139, 0.555) 100%);
+    box-shadow: 0 2px 5px 0px rgba(186, 101, 255, 0.452), 0 10px 5px 0 rgba(119, 0, 255, 0.479);
+    color: rgba(255, 255, 255, 0.808);
+    margin: 10% 0 0 0;
+    width: 100%;
+}
+
+.boxes2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 30px;
+    border-color: rgba(255, 255, 255, 0);
+    background: linear-gradient(180deg, rgba(47, 48, 48, 0.192) 0%, rgba(60, 0, 139, 0.555) 100%);
+    box-shadow: 0 0px 5px 0px rgba(119, 0, 255, 0.479), 0 10px 5px 0 rgba(119, 0, 255, 0.479);
+    color: rgba(255, 255, 255, 0.808);
+    margin: 2%;
+    width: 30%;
+    height: 15%;
+}
+
+p {
+    color: var(--gray);
+    margin: 2.5% 0 2.5% 0;
 }
