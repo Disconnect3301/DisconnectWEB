@@ -13,10 +13,6 @@
     color: inherit;
 }
 
-html, body { 
-  background: #00000075;
-}
-
 .background {
     position: fixed;
     width: 100%;
@@ -26,6 +22,16 @@ html, body {
     z-index: -1;
     background: radial-gradient(ellipse  at 30%  100%, transparent 0%, rgb(90,74,136) 75%, rgb(104,73,142) 100%) 35% 35%/140% 170%,
               linear-gradient(220deg, rgb(106,118,190) 0%, rgb(158,86,167) 60%, rgb(82,94,170) 100%);
+}
+
+.background section {
+    background: #00000075;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .main-container {
@@ -46,7 +52,6 @@ html, body {
     border-radius: 30px;
     background-color: rgba(0, 0, 0, 0.65);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.75);
-
     margin: 3%;
     padding: 7% 3% 7% 3%;
 }
@@ -84,6 +89,14 @@ html, body {
     width: 100%;
 }
 
+.boxes h2{
+    font-size: calc(1.8vh + 1.8vw);
+}
+
+.boxes p{
+    font-size: calc(1.2vh + 1.2vw);
+}
+
 .contacts-size {
     width: 15%;
     padding: 5px 20px 0 20px;
@@ -104,7 +117,13 @@ html, body {
     color: rgb(255, 255, 255);
     width: 100%;
     margin: 3%;
-    padding: 7% 3% 7% 3%;
+    padding: 3% 3% 3% 3%;
+}
+
+.projects-card h2{
+    text-decoration: underline rgba(111, 0, 255, 0.85) 2px;
+    text-underline-offset: 5px;
+    font-size: calc(1.9vh + 1.9vw);
 }
 
 .projects-container{
@@ -120,14 +139,12 @@ html, body {
     background-color: red;
 }
 
-
-
-.boxes2 {
+.project-boxes {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    border-radius: 30px;
+    border-radius: 100px 15px 100px 15px;
     border-color: rgba(255, 255, 255, 0);
     background: linear-gradient(180deg, rgba(47, 48, 48, 0.192) 0%, rgba(60, 0, 139, 0.555) 100%);
     box-shadow: 0 0px 5px 0px rgba(119, 0, 255, 0.479), 0 10px 5px 0 rgba(119, 0, 255, 0.479);
@@ -137,6 +154,14 @@ html, body {
     height: 50px;
 }
 
+
+
+.project-boxes h3{
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 0px 15px;
+    font-size: calc(1.6vh + 1.6vw);
+}
+
 .boxes2:hover {
     background-color: rgba(0, 0, 0, 0.75);
 }
@@ -144,4 +169,81 @@ html, body {
 p {
     color: var(--gray);
     margin: 2.5% 0 0 0;
+}
+
+.cool-text {
+    background: linear-gradient(to right, rgb(150, 35, 255) 0%, rgb(35, 150, 255) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 768px) {
+    .main-container {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100dvh;
+    }
+    .projects-container{
+        padding-top: 5%;
+    }
+    .username{
+        font-size: calc(2.0vh + 2.0vw);
+    }
+    .avatar{
+        width: calc(12vh + 12vw);
+    }
+    .profile-card {
+        display: flex;
+        justify-content: space-evenly;
+        width: 40%;
+        height: 85%;
+        margin: 1.5%;
+    }
+    .projects-card {
+        width: 40%;
+        margin: 1.5%;
+    }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 960px) {
+    .main-container {
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    .projects-container{
+        padding-top: 5%;
+    }
+    .username{
+        font-size: calc(1.5vh + 1.5vw);
+    }
+    .avatar{
+        width: calc(12vh + 12vw);
+    }
+    .profile-card {
+        display: flex;
+        justify-content: space-evenly;
+        width: 30%;
+        margin: 1%;
+        padding: 2% 1.5% 3% 1.5%;
+    }
+    .boxes p {
+        font-size: calc(0.6vh + 0.6vw);
+    }
+    .boxes h2 {
+        font-size: calc(1.1vh + 1.1vw);
+    }
+    .projects-card {
+        width: 54%;
+        margin: 1%;
+    }
+    .contacts-size {
+        width: calc(2.2vh + 2.2vw);
+    }
+    .projects-container h3 {
+        font-size: calc(1.2vh + 1.2vw);
+    }
 }
